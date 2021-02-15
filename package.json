@@ -1,0 +1,27 @@
+{
+    "name": "@omar-csse/zid-theme",
+    "version": "1.0.0",
+    "description": "A CLI to process zid theme folder",
+    "main": "src/index.js",
+    "bin": {
+        "@omar-csse/zid-theme": "bin/zid-theme",
+        "zid-theme": "bin/zid-theme"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "author": "omar <omar.csse@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "cli",
+        "zid",
+        "zid-theme"
+    ],
+    "dependencies": {
+        "archiver": "^5.2.0"
+    }
+}
