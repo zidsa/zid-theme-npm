@@ -7,7 +7,7 @@
 <br />
 
 <p align="center" width="100%">
-    <img width="80%" src="./src/assets/zid-logo.png"> 
+    <img width="50%" src="./src/assets/zid-logo.png"> 
 </p>
 
 <br />
