@@ -1,16 +1,16 @@
 # 📦 zid-theme-npm
 
+### NPM package to validate and zip the theme folder to match zid custom themes' standards
+
 <br />
 <br />
 <br />
 
-![Optional Text](./src/assets/zid-logo.png)
-<br />
-<br />
-<br />
+<p style="text-align: center;" width="100%">
+    <img width="80%" src="./src/assets/zid-logo.png"> 
+</p>
 
-NPM package to validate and zip the theme folder to match zid custom themes' standards
-
+<br />
 <br />
 <br />
 <br />
@@ -65,39 +65,38 @@ The follwoing structure is the valid theme SDK structure that has to be followed
 
 
 ```bash
-root
+$ root
+.
 ┃
-┃--query.json
-┃--layout.zid
-┃--header.zid
-┃--footer.zid
+┃─── query.json
+┃─── layout.zid
+┃─── header.zid
+┃─── footer.zid
 ┃
-┃--templates (accepted extensions: [ '.zid' ] )
-┃      ┃---404.zid
-┃      ┃---home.zid
-┃      ┃---search.zid
-┃      ┃---products.zid
-┃      ┃---product.zid
-┃      ┃---categories.zid
-┃      ┃---category.zid
-┃      ┃---blogs.zid
-┃      ┃---blog.zid
-┃      ┃---faqs.zid
-┃      ┃---shpping-and-payments.zid
-┃      ┃---account-addresses.zid
-┃      ┃---account-orders.zid
-┃      ┃---account-profile.zid
+┃─── templates (accepted extensions: [ '.zid' ] )
+┃    ┃─── 404.zid
+┃    ┃─── home.zid
+┃    ┃─── search.zid
+┃    ┃─── products.zid
+┃    ┃─── product.zid
+┃    ┃─── categories.zid
+┃    ┃─── category.zid
+┃    ┃─── blogs.zid
+┃    ┃─── blog.zid
+┃    ┃─── faqs.zid
+┃    ┃─── shpping-and-payments.zid
+┃    ┃─── account-addresses.zid
+┃    ┃─── account-orders.zid
+┃    ┃─── account-profile.zid
 ┃
-┃--modules (accepted extensions: ['.zid', '.html'] )
+┃─── modules (accepted extensions: ['.zid', '.html'] )
 ┃
-┃--common (accepted extensions: ['.zid', '.html'] )
+┃─── common (accepted extensions: ['.zid', '.html'] )
 ┃
-┃--locals (accepted extensions: ['.json'] )
+┃─── locals (accepted extensions: ['.json'] )
 ┃
-┃--assets
-┃
-┃
-┃
+┃─── assets
+
 ```
 
 ## assets accepted extensions
