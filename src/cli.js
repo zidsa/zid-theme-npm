@@ -1,6 +1,6 @@
 const commands = require('./models/commands.js');
 const logger = require('./console/logger.js');
-const validate_args = require('./models/validate_args.js');
+const validate_build_args = require('./helper/validate_build_args.js');
 
 
 const cli = (args) => {
@@ -14,7 +14,7 @@ const cli = (args) => {
     }
 
     if (user_args[0] == 'build') {
-        build_args = validate_args.build(user_args)
+        build_args = validate_build_args(user_args)
         commands.build(build_args.build_name, build_args.build_path)
     }
     else if (user_args[0] == 'help') {

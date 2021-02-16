@@ -30,14 +30,10 @@ const validate_theme = (build_path) => {
                         continue;
                     }
                     let valid_ext = validate_extension(subdir_file, sdk_structure[file]);
-                    if (valid_ext !== true) return reject(`Unable to find ${valid_ext}\n   - Make sure theme path is correct\n`)
+                    if (valid_ext !== true) return reject(`Invalid extension ${valid_ext}\n   ${subdir_file} in ${file} folder\n`)
                 }
 
             }
-        }
-
-        for (file in sdk_structure) {
-            
         }
 
         return resolve(`Theme validated`)

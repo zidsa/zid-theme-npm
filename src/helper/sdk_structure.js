@@ -1,9 +1,9 @@
 const sdk_structure = {
-    root: ['layout.zid', 'header.zid', 'footer.zid', 'templates', 'home_page_modules', 'locals', 'common', 'assets'],
+    root: ['query.json', 'layout.zid', 'header.zid', 'footer.zid', 'templates', 'modules', 'locals', 'common', 'assets'],
     templates: ['.zid'],
-    common: ['.zid'],
-    home_page_modules: ['.zid', '.json'],
-    assets: ['.json', '.js', '.scss', '.css', '.png', '.svg', '.jpeg'],
+    common: ['.zid', '.html'],
+    modules: ['.zid', '.html'],
+    assets: ['.js','.ts','.css','.scss','.map','.png','.jpg','.jpeg','.gif','.svg','.woff','.woff2','.otf','.ttf','.eot'],
     locals: ['.json'],
 }
 
