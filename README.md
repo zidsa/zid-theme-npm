@@ -1,12 +1,12 @@
 # 📦 zid-theme-npm
 
-### NPM package to validate and zip the theme folder to match zid custom themes' standards
+#### NPM package to validate and zip the theme folder to match zid custom themes' standards
 
 <br />
 <br />
 <br />
 
-<p style="text-align: center;" width="100%">
+<p align="center" width="100%">
     <img width="80%" src="./src/assets/zid-logo.png"> 
 </p>
 
