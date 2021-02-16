@@ -4,14 +4,11 @@
 
 <br />
 <br />
-<br />
 
 <p align="center" width="100%">
     <img width="50%" src="./src/assets/zid-logo.png"> 
 </p>
 
-<br />
-<br />
 <br />
 <br />
 
@@ -20,7 +17,6 @@
 - Node.js
 - NPM (Node Package Manager)
   
-<br />
 <br />
 <br />
 
@@ -51,7 +47,6 @@ Installation is done using the
 $  yarn add zid-theme
 ```
 
-<br />
 <br />
 <br />
 
@@ -104,7 +99,6 @@ $ root
 ```bash
 ['.js','.ts','.css','.scss','.map','.png','.jpg','.jpeg','.gif','.svg','.woff','.woff2','.otf','.ttf','.eot']
 ```
-<br />
 <br />
 <br />
 
