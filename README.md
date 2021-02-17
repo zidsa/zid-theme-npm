@@ -1,4 +1,4 @@
-# 📦 zid-theme-npm
+# 📦 zid-theme
 
 #### NPM package to validate and zip the theme folder to match zid custom themes' standards
 
@@ -15,15 +15,10 @@
 <br />
 
 <p align="center">
-    <img width="60%" src="https://camo.githubusercontent.com/15ad718c0d974a97796d5151dd654487f8dfdea5ff88f9f1805bc06144c894f5/68747470733a2f2f7765622e7a69642e73612f696d616765732f7a69645f66756c6c5f6c6f676f2e706e67"> 
+    <a href="" style="cursor: default;">
+        <img width="60%" src="https://raw.githubusercontent.com/zidsa/zid-theme-npm/develop/assets/zid.png?token=AGO5ZUUI3XZ3TOV7XWEQZRTAG2RJU"> 
+    </a>
 </p>
-
-<br />
-<br />
-
-<br />
-<br />
-
 
 <br />
 <br />
@@ -53,14 +48,14 @@ Installation is done using the
 [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```bash 
-$ npm install zid-theme
+$ npm i -g zid-theme
 ```
 
 
 Installation is done using the
 [`yarn add` command](https://yarnpkg.com/cli/add):
 ```bash 
-$ yarn add zid-theme
+$ yarn add global zid-theme
 ```
 
 <br />
