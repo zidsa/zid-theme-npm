@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-let cli = require('../src/cli');
+let cli = require('../dist/cli');
 cli(process.argv);

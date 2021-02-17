@@ -30,9 +30,10 @@ const validate_build_args = (user_args) => {
         }
         else if (user_args[i] == '--path' && user_args[i+1]) {
             build_path = path.resolve(process.cwd(), user_args[i+1] || '.')
+            build_name = path.basename(build_path)
         }
     }
-
+    
     return { build_path: build_path, build_name: build_name }
 }
 
