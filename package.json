@@ -2,9 +2,9 @@
     "name": "zid-theme",
     "version": "1.0.0",
     "description": "A CLI to process zid theme folder",
-    "main": "src/index.js",
+    "main": "src/cli.js",
     "bin": {
-        "zid-theme": "bin/zid-theme"
+        "zid-theme": "build/zid-theme.js"
     },
     "publishConfig": {
         "access": "public"

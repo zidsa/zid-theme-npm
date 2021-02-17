@@ -3,15 +3,11 @@
 #### NPM package to validate and zip the theme folder to match zid custom themes' standards
 
 <br />
-
-[![NPM Version][npm-image]][npm-url]
-
-<br />
 <br />
 
-<p align="center" width="100%">
-    <a>
-        <img width="50%" src="https://camo.githubusercontent.com/15ad718c0d974a97796d5151dd654487f8dfdea5ff88f9f1805bc06144c894f5/68747470733a2f2f7765622e7a69642e73612f696d616765732f7a69645f66756c6c5f6c6f676f2e706e67"> 
+<p align="center">
+    <a href="https://npmjs.org/package/zid-theme">
+        <img src="https://img.shields.io/npm/v/zid-theme"> 
     </a>
 </p>
 
@@ -19,8 +15,15 @@
 <br />
 
 <p align="center" width="100%">
-    <img width="50%" src="https://zid.sa/wp-content/themes/zid2020/images/zid-logo.png"> 
+    <img src="https://camo.githubusercontent.com/15ad718c0d974a97796d5151dd654487f8dfdea5ff88f9f1805bc06144c894f5/68747470733a2f2f7765622e7a69642e73612f696d616765732f7a69645f66756c6c5f6c6f676f2e706e67"> 
 </p>
+
+<br />
+<br />
+
+<br />
+<br />
+
 
 <br />
 <br />
