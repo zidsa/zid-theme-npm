@@ -6,7 +6,7 @@
 <br />
 
 <p align="center" width="100%">
-    <img width="50%" src="./src/assets/zid-logo.png"> 
+    <img width="50%" src="https://zid.sa/wp-content/themes/zid2020/images/zid-logo.png"> 
 </p>
 
 <br />
@@ -94,7 +94,7 @@ $ root
 
 ```
 
-## assets accepted extensions
+### assets accepted extensions
 
 ```bash
 ['.js','.ts','.css','.scss','.map','.png','.jpg','.jpeg','.gif','.svg','.woff','.woff2','.otf','.ttf','.eot']
@@ -102,7 +102,7 @@ $ root
 <br />
 <br />
 
-## ⚡️ build command
+### ⚡️ build command
 
 
 Running the build command only without arguments, will assume the current path is where the theme exist, and the theme zip will be named after the root directory name
@@ -113,20 +113,29 @@ zid-theme build
 
 The follwoing command takes two arguments `--path` and `--name`
 
-## To set the path of the theme (default .):
+### To set the path of the theme (default .):
 
 ```bash
 zid-theme build --path ./theme_path
 ```
 
-## To set the name of the theme (root folder name):
+### To set the name of the theme (root folder name):
 
 ```bash
 zid-theme build --name best-theme-ever
 ```
+<br />
+<br />
 
-## Full command:
+### Full command:
 
 ```bash
 zid-theme build --name best-theme-ever --path .
 ```
+
+<br />
+<br />
+
+# License
+
+[MIT](LICENSE)
