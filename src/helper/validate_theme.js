@@ -4,6 +4,7 @@ const sdk_structure = require('./sdk_structure.js');
 const delete_ds_store = require('./delete_ds_store.js');
 const validate_extension = require('./validate_extension.js');
 const validate_structure = require('./validate_structure.js');
+const logger = require('../console/logger.js');
 
 
 const validate_theme = (build_path) => {
@@ -13,7 +14,7 @@ const validate_theme = (build_path) => {
         let files = fs.readdirSync(build_path)
 
         let valid_structure = validate_structure(files, sdk_structure.root);
-        if (valid_structure !== true) return reject(`Unable to find ${valid_structure}\n   - Make sure theme path is correct\n`)
+        if (valid_structure !== true) return reject(`Unable to find:\n   ${valid_structure}\n\n   - Make sure theme path is correct or add required files\n`)
 
         for (const file of files) {
 
