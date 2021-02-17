@@ -1,6 +1,7 @@
 const commands = require('./models/commands.js');
 const logger = require('./console/logger.js');
 const validate_build_args = require('./helper/validate_build_args.js');
+const print_available_commands = require('./helper/print_available_commands.js');
 
 
 const cli = (args) => {
@@ -10,7 +11,17 @@ const cli = (args) => {
     if (user_args.length < 1) {
         logger.log()
         logger.log("no argument passed\n", "red")
-        logger.log("available commands:\n\n•  build\n•  help\n", "green")
+        logger.log("available commands:\n")
+        print_available_commands()
+        process.exit(9)
+    }
+
+    if (!commands[user_args[0]]) {
+        logger.log()
+        logger.log(`Invalid argument ${user_args[0]}\n`, "red")
+        logger.log("available commands:\n",)
+        print_available_commands()
+        process.exit(9)  
     }
 
     if (user_args[0] == 'build') {

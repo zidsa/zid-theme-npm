@@ -14,8 +14,8 @@
 <br />
 <br />
 
-<p align="center" width="100%">
-    <img src="https://camo.githubusercontent.com/15ad718c0d974a97796d5151dd654487f8dfdea5ff88f9f1805bc06144c894f5/68747470733a2f2f7765622e7a69642e73612f696d616765732f7a69645f66756c6c5f6c6f676f2e706e67"> 
+<p align="center">
+    <img width="60%" src="https://camo.githubusercontent.com/15ad718c0d974a97796d5151dd654487f8dfdea5ff88f9f1805bc06144c894f5/68747470733a2f2f7765622e7a69642e73612f696d616765732f7a69645f66756c6c5f6c6f676f2e706e67"> 
 </p>
 
 <br />
@@ -153,7 +153,3 @@ $ zid-theme build --name best-theme-ever --path .
 # License
 
 [MIT](LICENSE)
-
-
-[npm-url]: https://npmjs.org/package/zid-theme
-[npm-image]: https://img.shields.io/npm/v/zid-theme
