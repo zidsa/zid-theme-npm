@@ -6,7 +6,7 @@ const validate_structure = (files, base_structure) => {
         if (!files.includes(base_structure[i])) missed_files.push(base_structure[i])
     }
     
-    if (missed_files === []) return true
+    if (missed_files.length === 0) return true
     return JSON.stringify(missed_files)
 }
 
