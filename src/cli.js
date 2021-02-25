@@ -21,7 +21,7 @@ const cli = (args) => {
 
     if (versions.includes(user_args[0])) {
         logger.log(`v${pjson.version}`, 'green')
-        process.exit(9)
+        process.exit(0)
     }
 
     if (!commands[user_args[0]]) {
