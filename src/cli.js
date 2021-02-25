@@ -1,5 +1,6 @@
 const commands = require('./models/commands.js');
 const logger = require('./console/logger.js');
+const pjson = require('../package.json');
 const validate_build_args = require('./helper/validate_build_args.js');
 const print_available_commands = require('./helper/print_available_commands.js');
 
@@ -13,6 +14,13 @@ const cli = (args) => {
         logger.log("no argument passed\n", "red")
         logger.log("available commands:\n")
         print_available_commands()
+        process.exit(9)
+    }
+
+    let versions = ['--version', '-v', '--v', 'version']
+
+    if (versions.includes(user_args[0])) {
+        logger.log(`v${pjson.version}`, 'green')
         process.exit(9)
     }
 
