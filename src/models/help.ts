@@ -1,7 +1,6 @@
-const logger = require('../console/logger.js');
+import logger from '../console/logger'
 
-
-const help = () => {
+const help = function (): void {
 
     logger.log()
     logger.log("help:\n", "cyan")
@@ -11,8 +10,10 @@ const help = () => {
     logger.log("   example-2: zid-theme build\n\n", "yellow")
     logger.log("•  help")
     logger.log("   example: zid-theme help\n", "yellow")
+    logger.log("•  [version, --version, --v]")
+    logger.log("   example: zid-theme --v\n", "yellow")
 
 }
 
 
-module.exports = help
+export default help

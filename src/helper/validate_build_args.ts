@@ -1,8 +1,8 @@
-const path = require('path')
-const logger = require('../console/logger.js');
+import * as path from 'path'
+import logger from '../console/logger'
 
 
-const validate_build_args = (user_args) => {
+const validate_build_args = (user_args: string[]) => {
 
     if (user_args[1]) {
         if (user_args[1] !== '--name' && user_args[1] !== '--path') {
@@ -38,4 +38,4 @@ const validate_build_args = (user_args) => {
 }
 
 
-module.exports = validate_build_args
+export default validate_build_args

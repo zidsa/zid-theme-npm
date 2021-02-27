@@ -1,14 +1,14 @@
-const fs = require('fs');
-const path = require('path');
-const archiver = require('archiver');
-const logger = require('../console/logger.js');
-const validate_theme = require('./validate_theme.js');
-const sdk_structure = require('./sdk_structure.js');
+import * as fs from 'fs'
+import * as path from 'path'
+import * as archiver from 'archiver'
+import logger from '../console/logger'
+import validate_theme from './validate_theme'
+import sdk_structure from './sdk_structure'
 
 const archive = archiver('zip');
 
 
-const zip_theme = async (build_name, build_path) => {
+const zip_theme = async function (build_name:string, build_path:string): Promise<any> {
 
 
     try {
@@ -32,13 +32,13 @@ const zip_theme = async (build_name, build_path) => {
         archive.append(fs.createReadStream(path.resolve(build_path, file)), { name: file });
     })
 
-    for (folder in sdk_structure) {
+    for (let folder in sdk_structure) {
 
         if (folder !== 'root') {
 
             let files = fs.readdirSync(path.resolve(build_path, folder))
 
-            archive.append(null, { name: `${folder}/` });
+            archive.append('', { name: `${folder}/` });
 
             files.forEach(file => {
                 let file_path = path.resolve(build_path, folder, file)
@@ -47,8 +47,8 @@ const zip_theme = async (build_name, build_path) => {
         }
     }
 
-    archive.finalize();
+    await archive.finalize();
 }
 
 
-module.exports = zip_theme
+export default zip_theme

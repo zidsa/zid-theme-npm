@@ -1,11 +1,11 @@
-const commands = require('./models/commands.js');
-const logger = require('./console/logger.js');
-const pjson = require('../package.json');
-const validate_build_args = require('./helper/validate_build_args.js');
-const print_available_commands = require('./helper/print_available_commands.js');
+import * as commands from './models/commands';
+import * as pjson from '../package.json'
+import logger from './console/logger'
+import validate_build_args from './helper/validate_build_args'
+import print_available_commands from './helper/print_available_commands'
 
 
-const cli = (args) => {
+const cli = function (args:string[]): void {
 
     let user_args = args.slice(2)
 
@@ -17,14 +17,14 @@ const cli = (args) => {
         process.exit(9)
     }
 
-    let versions = ['--version', '-v', '--v', 'version']
+    let versions = ['--version', '--v', 'version']
 
     if (versions.includes(user_args[0])) {
         logger.log(`v${pjson.version}`, 'green')
         process.exit(0)
     }
 
-    if (!commands[user_args[0]]) {
+    if (!commands[user_args[0] as keyof typeof commands]) {
         logger.log()
         logger.log(`Invalid argument ${user_args[0]}\n`, "red")
         logger.log("available commands:\n",)
@@ -33,7 +33,7 @@ const cli = (args) => {
     }
 
     if (user_args[0] == 'build') {
-        build_args = validate_build_args(user_args)
+        const build_args = validate_build_args(user_args)
         commands.build(build_args.build_name, build_args.build_path)
     }
     else if (user_args[0] == 'help') {
@@ -43,4 +43,4 @@ const cli = (args) => {
 }
 
 
-module.exports = cli
+export default cli
