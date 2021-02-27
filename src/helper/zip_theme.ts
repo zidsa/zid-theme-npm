@@ -10,7 +10,6 @@ const archive = archiver('zip');
 
 const zip_theme = async function (build_name:string, build_path:string): Promise<any> {
 
-
     try {
         let valid_theme = await validate_theme(build_path)   
         logger.log(valid_theme)
@@ -22,7 +21,7 @@ const zip_theme = async function (build_name:string, build_path:string): Promise
     
     output.on('close', function() {
         logger.log(archive.pointer() + ' total bytes');
-        logger.log(`${build_name}.zip successfully created!\n`);
+        logger.log(`${build_name}.zip successfully created 🎉!\n`);
     });
 
     archive.pipe(output);
