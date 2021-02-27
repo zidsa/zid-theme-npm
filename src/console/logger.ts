@@ -1,14 +1,13 @@
-const colors = require('./colors')
+import colors from './colors'
 
-
-const log = (msg='', color='green') => {
+const log = function (msg='', color='green'): void {
 
     let _msg = colors[color]+`  ${msg}`
     console.log(_msg)
 
 }
 
-const error = (msg) => {
+const error = function (msg: string): void {
     log()
     log(`${msg}\n`, "red")
     process.exit(9)
@@ -20,4 +19,4 @@ const logger = {
 }
 
 
-module.exports = logger
+export default logger

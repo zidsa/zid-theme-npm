@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "module": "commonjs",
+        "lib": ["dom", "es5", "es6", "ES2017"],
+        "allowJs": false,
+        "outDir": "./build",
+        "rootDir": ".",
+        "strict": true,
+        "noImplicitAny": true,
+        "esModuleInterop": false,
+        "resolveJsonModule": true,
+        "types": ["node"],
+    },
+    "exclude": [
+        "node_modules",
+        "theme",
+        "webpack.config.js",
+        "dist"
+    ],
+    "include": ["src", "package.json"]
+}

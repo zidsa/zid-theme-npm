@@ -1,6 +1,6 @@
-const validate_structure = (files, base_structure) => {
+const validate_structure = function (files:string[], base_structure:string[]): string | boolean {
 
-    let missed_files = []
+    let missed_files: string[] = [];
 
     for (let i = 0; i < base_structure.length; i++) {
         if (!files.includes(base_structure[i])) missed_files.push(base_structure[i])
@@ -11,4 +11,4 @@ const validate_structure = (files, base_structure) => {
 }
 
 
-module.exports = validate_structure
+export default validate_structure
