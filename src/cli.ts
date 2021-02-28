@@ -1,5 +1,4 @@
 import * as commands from './models/commands';
-import * as pjson from '../package.json'
 import logger from './console/logger'
 import validate_build_args from './helper/validate_build_args'
 import print_available_commands from './helper/print_available_commands'
@@ -20,7 +19,7 @@ const cli = function (args:string[]): void {
     let versions = ['--version', '--v', 'version']
 
     if (versions.includes(user_args[0])) {
-        logger.log(`v${pjson.version}`, 'green')
+        commands.version()
         process.exit(0)
     }
 
