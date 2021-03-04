@@ -4,6 +4,8 @@ import * as archiver from 'archiver'
 import logger from '../console/logger'
 import validate_theme from './validate_theme'
 import sdk_structure from './sdk_structure'
+import root_required_files from './root_required_files'
+
 
 const archive = archiver('zip');
 
@@ -26,8 +28,7 @@ const zip_theme = async function (build_name:string, build_path:string): Promise
 
     archive.pipe(output);
 
-    let required_files = ['layout.zid', 'header.zid', 'footer.zid']
-    required_files.forEach(file => {
+    root_required_files.forEach(file => {
         archive.append(fs.createReadStream(path.resolve(build_path, file)), { name: file });
     })
 
