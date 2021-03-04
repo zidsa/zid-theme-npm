@@ -16,7 +16,7 @@ const cli = function (args:string[]): void {
         process.exit(9)
     }
 
-    let versions = ['--version', '--v', 'version']
+    let versions = ['--version', '-v', '--v', 'version']
 
     if (versions.includes(user_args[0])) {
         commands.version()
