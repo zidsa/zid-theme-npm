@@ -1,6 +1,6 @@
 {
     "name": "zid-theme",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A CLI to process zid theme folder",
     "main": "bin/zid-theme",
     "repository": "https://github.com/zidsa/zid-theme-npm",
