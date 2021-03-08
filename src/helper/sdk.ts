@@ -8,7 +8,7 @@ interface SDKStructure {
     [key: string]: string[];
 }
 
-const sdk_structure: SDKStructure = {
+const structure: SDKStructure = {
     root: ['query.json', 'layout.zid', 'header.zid', 'footer.zid', 'templates', 'modules', 'locals', 'common', 'assets'],
     templates: ['.zid'],
     common: ['.zid', '.html'],
@@ -18,4 +18,17 @@ const sdk_structure: SDKStructure = {
 }
 
 
-export default sdk_structure
+const optinal_folders_files = ['modules']
+
+
+const root_required_files: string[] = ['query.json', 'layout.zid', 'header.zid', 'footer.zid']
+
+
+const sdk = {
+    structure: structure, 
+    optinal_folders_files: optinal_folders_files,
+    root_required_files: root_required_files
+} 
+
+
+export default sdk

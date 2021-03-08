@@ -2,7 +2,7 @@ import logger from '../console/logger'
 import zip_theme from '../helper/zip_theme'
 
 
-const build = function (build_name:string, build_path:string): void {
+const build = (build_name:string, build_path:string): void => {
 
     logger.log()
 
