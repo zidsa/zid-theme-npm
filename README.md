@@ -16,7 +16,7 @@
 
 <p align="center">
     <a href="#" style="cursor: default;">
-        <img width="60%" src="https://raw.githubusercontent.com/zidsa/zid-theme-npm/master/assets/zid.png?token=AGO5ZUSVE2US46UKRYRIED3AJIK6S"> 
+        <img width="60%" src="https://raw.githubusercontent.com/zidsa/zid-theme-npm/master/assets/zid.png?token=AGO5ZUSPTQI5YCYF76XHWLDAJ7RT4"> 
     </a>
 </p>
 
