@@ -2,7 +2,7 @@ import logger from '../console/logger'
 import { commands } from './commands'
 
 
-const help = function (): void {
+const help = (): void => {
 
     logger.log()
     logger.log("help:\n", "cyan")

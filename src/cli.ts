@@ -4,7 +4,7 @@ import validate_build_args from './helper/validate_build_args'
 import print_available_commands from './helper/print_available_commands'
 
 
-const cli = function (args:string[]): void {
+const cli = (args:string[]): void => {
 
     let user_args = args.slice(2)
 
