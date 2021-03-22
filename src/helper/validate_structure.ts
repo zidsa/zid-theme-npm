@@ -1,13 +1,13 @@
 import sdk from './sdk'
 
 
-const validate_structure = (files:string[]): string | boolean => {
+const validate_structure = (files:string[], structure:string[]): string | boolean => {
 
     let missed_files: string[] = [];
 
-    for (let i = 0; i < sdk.structure.root.length; i++) {
-        if (!files.includes(sdk.structure.root[i]) && !sdk.optinal_folders_files.includes(sdk.structure.root[i])) {
-            missed_files.push(sdk.structure.root[i])
+    for (let i = 0; i < structure.length; i++) {
+        if (!files.includes(structure[i]) && !sdk.optinal_folders_files.includes(structure[i])) {
+            missed_files.push(structure[i])
         }
     }
 
