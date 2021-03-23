@@ -5,9 +5,6 @@ import delete_ds_store from './delete_ds_store'
 import logger from '../console/logger'
 
 
-const MAX_ASSETS_FILE_SIZE_2MB:number = 2*1000000
-
-
 const validate_theme = (build_path:string): Promise<string> => {
 
     return new Promise((resolve, reject) => {
@@ -85,7 +82,7 @@ const validate_structure = (files:string[], structure:string[]): string | boolea
 const validate_assets_file_size = (file:string, filepath:string): void => {
 
     let stats = fs.lstatSync(filepath)
-    if (stats.size >= MAX_ASSETS_FILE_SIZE_2MB) {
+    if (stats.size >= sdk.MAX_ASSETS_FILE_SIZE_2MB) {
         logger.log(`WARNING: ${file} in assets is larger than 2MB: ${formatSizeUnits(stats.size)}`, 'yellow')
     }
 
