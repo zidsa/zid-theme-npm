@@ -10,7 +10,7 @@ interface SDKStructure {
 
 const structure: SDKStructure = {
     root: ['query.json', 'layout.zid', 'header.zid', 'footer.zid', 'templates', 'modules', 'locals', 'common', 'assets'],
-    templates: ['404.zid', 'account-addresses.zid', 'account-orders.zid', 'account-profile.zid', 'blog.zid', 'blogs.zid', 'categories.zid', 'category.zid', 'faqs.zid', 'home.zid', 'product.zid', 'products.zid', 'search.zid', 'shipping-and-payments.zid'],
+    templates: ['404.zid', 'account-addresses.zid', 'account-orders.zid', 'account-profile.zid', 'blog.zid', 'blogs.zid', 'categories.zid', 'category.zid', 'faqs.zid', 'cart.zid', 'home.zid', 'product.zid', 'products.zid', 'search.zid', 'shipping-and-payments.zid'],
     common: ['.zid', '.html'],
     modules: ['.zid', '.html'],
     assets: ['.js','.ts','.css','.scss','.map','.png','.jpg','.jpeg','.gif','.svg','.woff','.woff2','.otf','.ttf','.eot'],
