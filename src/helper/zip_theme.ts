@@ -13,6 +13,7 @@ const zip_theme = async (build_name:string, build_path:string): Promise<any> => 
 
     try {
         let valid_theme = await validation.validate_theme(build_path)   
+        logger.log()
         logger.log(valid_theme)
     } catch (error) {
         logger.error(error)

@@ -5,6 +5,9 @@ import delete_ds_store from './delete_ds_store'
 import logger from '../console/logger'
 
 
+const MAX_ASSETS_FILE_SIZE_2MB:number = 2*1000000
+
+
 const validate_theme = (build_path:string): Promise<string> => {
 
     return new Promise((resolve, reject) => {
@@ -31,10 +34,14 @@ const validate_theme = (build_path:string): Promise<string> => {
 
                 for (const subdir_file of subdir_files) {
 
+                    let subdir_file_path = path.resolve(file_data.path, subdir_file)
+
                     if (subdir_file == '.DS_Store') {
-                        delete_ds_store(path.resolve(file_data.path, subdir_file))
+                        delete_ds_store(subdir_file_path)
                         continue;
                     }
+
+                    if (file == 'assets') validate_assets_file_size(subdir_file, subdir_file_path)
 
                     if (!sdk.need_structure_validation.includes(file)) {
                         let valid_ext = validate_extension(subdir_file, sdk.structure[file]);
@@ -72,6 +79,32 @@ const validate_structure = (files:string[], structure:string[]): string | boolea
 
     if (missed_files.length === 0) return true
     return JSON.stringify(missed_files)
+}
+
+
+const validate_assets_file_size = (file:string, filepath:string): void => {
+
+    let stats = fs.lstatSync(filepath)
+    if (stats.size >= MAX_ASSETS_FILE_SIZE_2MB) {
+        logger.log(`WARNING: ${file} in assets is larger than 2MB: ${formatSizeUnits(stats.size)}`, 'yellow')
+    }
+
+}
+
+
+const formatSizeUnits = (bytes:number): string => {
+
+    let bytes_str:string = '';
+
+    if      (bytes >= 1073741824) { bytes_str = (bytes / 1073741824).toFixed(2) + "GB"; }
+    else if (bytes >= 1048576)    { bytes_str = (bytes / 1048576).toFixed(2) + "MB"; }
+    else if (bytes >= 1024)       { bytes_str = (bytes / 1024).toFixed(2) + "KB"; }
+    else if (bytes > 1)           { bytes_str = bytes + " bytes"; }
+    else if (bytes == 1)          { bytes_str = bytes + " byte"; }
+    else                          { bytes_str = "0 bytes"; }
+
+    return bytes_str;
+
 }
 
 
