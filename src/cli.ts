@@ -1,6 +1,6 @@
 import * as commands from './models/commands';
 import logger from './console/logger'
-import validate_build_args from './helper/validate_build_args'
+import validation from './helper/validation'
 import print_available_commands from './helper/print_available_commands'
 
 
@@ -32,7 +32,7 @@ const cli = (args:string[]): void => {
     }
 
     if (user_args[0] == 'build') {
-        const build_args = validate_build_args(user_args)
+        const build_args = validation.validate_build_args(user_args)
         commands.build(build_args.build_name, build_args.build_path)
     }
     else if (user_args[0] == 'help') {

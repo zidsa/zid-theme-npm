@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as archiver from 'archiver'
 import logger from '../console/logger'
-import validate_theme from './validate_theme'
+import validation from './validation'
 import sdk from './sdk'
 
 
@@ -12,7 +12,7 @@ const archive = archiver('zip');
 const zip_theme = async (build_name:string, build_path:string): Promise<any> => {
 
     try {
-        let valid_theme = await validate_theme(build_path)   
+        let valid_theme = await validation.validate_theme(build_path)   
         logger.log(valid_theme)
     } catch (error) {
         logger.error(error)
