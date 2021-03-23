@@ -93,9 +93,9 @@ const formatSizeUnits = (bytes:number): string => {
 
     let bytes_str:string = '';
 
-    if      (bytes >= 1073741824) { bytes_str = (bytes / 1073741824).toFixed(2) + "GB"; }
-    else if (bytes >= 1048576)    { bytes_str = (bytes / 1048576).toFixed(2) + "MB"; }
-    else if (bytes >= 1024)       { bytes_str = (bytes / 1024).toFixed(2) + "KB"; }
+    if      (bytes >= 1073741824) { bytes_str = (bytes / (1000*1000*1000)).toFixed(2) + "GB"; }
+    else if (bytes >= 1048576)    { bytes_str = (bytes / (1000*1000)).toFixed(2) + "MB"; }
+    else if (bytes >= 1024)       { bytes_str = (bytes / (1000)).toFixed(2) + "KB"; }
     else if (bytes > 1)           { bytes_str = bytes + " bytes"; }
     else if (bytes == 1)          { bytes_str = bytes + " byte"; }
     else                          { bytes_str = "0 bytes"; }
@@ -155,4 +155,5 @@ export default {
     validate_extension,
     validate_structure,
     validate_build_args,
+    formatSizeUnits,
 }

@@ -25,6 +25,8 @@ const need_structure_validation: string[] = ['templates']
 
 const MAX_ASSETS_FILE_SIZE_2MB:number = 2*1000000
 
+const MAX_ZIP_FILE_SIZE_50MB:number = 50*1000000
+
 
 const sdk = {
     structure: structure, 
@@ -32,6 +34,7 @@ const sdk = {
     root_required_files: root_required_files,
     need_structure_validation: need_structure_validation,
     MAX_ASSETS_FILE_SIZE_2MB: MAX_ASSETS_FILE_SIZE_2MB,
+    MAX_ZIP_FILE_SIZE_50MB: MAX_ZIP_FILE_SIZE_50MB,
 } 
 
 

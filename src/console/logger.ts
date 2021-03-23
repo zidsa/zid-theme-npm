@@ -9,7 +9,7 @@ const log = (msg='', color='green'): void => {
 
 const error = (msg: string): void => {
     log()
-    log(`${msg}\n`, "red")
+    log(`Error: ${msg}\n`, "red")
     process.exit(9)
 }
 
