@@ -90,6 +90,7 @@ $ root
 ┃    ┃─── blogs.zid
 ┃    ┃─── blog.zid
 ┃    ┃─── faqs.zid
+┃    ┃─── cart.zid
 ┃    ┃─── shpping-and-payments.zid
 ┃    ┃─── account-addresses.zid
 ┃    ┃─── account-orders.zid
