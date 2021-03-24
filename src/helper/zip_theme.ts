@@ -11,18 +11,29 @@ const archive = archiver('zip');
 
 const zip_theme = async (build_name:string, build_path:string): Promise<any> => {
 
+    let zipfile_path:string =  path.resolve(build_path, `${build_name}.zip`)
+
     try {
         let valid_theme = await validation.validate_theme(build_path)   
+        logger.log()
         logger.log(valid_theme)
     } catch (error) {
         logger.error(error)
     }
 
-    const output = fs.createWriteStream(path.resolve(build_path, `${build_name}.zip`));
-    
-    output.on('close', function() {
-        logger.log(archive.pointer() + ' total bytes');
+    const output = fs.createWriteStream(zipfile_path);
+
+    output.on('finish', function() {
+
+        if (archive.pointer() >= sdk.MAX_ZIP_FILE_SIZE_50MB) {
+            fs.rmSync(zipfile_path)
+            logger.log('Total size: '+validation.formatSizeUnits(archive.pointer()), 'yellow');
+            logger.error(`${build_name}.zip has to be less than 50MB`)
+        }
+
+        logger.log('Total size: '+validation.formatSizeUnits(archive.pointer()));
         logger.log(`${build_name}.zip successfully created 🎉!\n`);
+
     });
 
     archive.pipe(output);
