@@ -9,17 +9,17 @@ interface SDKStructure {
 }
 
 const structure: SDKStructure = {
-    root: ['query.json', 'layout.zid', 'header.zid', 'footer.zid', 'templates', 'modules', 'locals', 'common', 'assets'],
-    templates: ['404.zid', 'account-addresses.zid', 'account-orders.zid', 'account-profile.zid', 'blog.zid', 'blogs.zid', 'categories.zid', 'category.zid', 'faqs.zid', 'cart.zid', 'home.zid', 'product.zid', 'products.zid', 'search.zid', 'shipping-and-payments.zid'],
-    common: ['.zid', '.html'],
-    modules: ['.zid', '.html'],
+    root: ['query.json', 'layout.twig', 'header.twig', 'footer.twig', 'templates', 'modules', 'locals', 'common', 'assets'],
+    templates: ['404.twig', 'account-addresses.twig', 'account-orders.twig', 'account-profile.twig', 'blog.twig', 'blogs.twig', 'categories.twig', 'category.twig', 'faqs.twig', 'cart.twig', 'home.twig', 'product.twig', 'products.twig', 'search.twig', 'shipping-and-payments.twig'],
+    common: ['.twig'],
+    modules: ['.twig'],
     assets: ['.js','.ts','.css','.scss','.map','.png','.jpg','.jpeg','.gif','.svg','.woff','.woff2','.otf','.ttf','.eot'],
     locals: ['.json'],
 }
 
 const optinal_folders_files: string[] = ['modules']
 
-const root_required_files: string[] = ['query.json', 'layout.zid', 'header.zid', 'footer.zid']
+const root_required_files: string[] = ['query.json', 'layout.twig', 'header.twig', 'footer.twig']
 
 const need_structure_validation: string[] = ['templates']
 

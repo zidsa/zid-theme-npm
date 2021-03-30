@@ -63,7 +63,7 @@ $ yarn add global zid-theme
 
 # 💻 Usage
 
-The follwoing structure is the valid theme SDK structure that has to be followed, othewise an error will be thrown. All the mentioned files and folders are required, Empty folders can be empty but have to exist (Such as modules, locals, assets)
+The follwoing structure is the valid theme SDK structure that has to be followed, othewise an error will be thrown. All the mentioned files and folders are required, and folders can be empty (Such as modules, locals, assets)
 
 [See here for accepted assets extension](#assets-accepted-extensions)
 
@@ -75,30 +75,30 @@ $ root
 .
 ┃
 ┃─── query.json
-┃─── layout.zid
-┃─── header.zid
-┃─── footer.zid
+┃─── layout.twig
+┃─── header.twig
+┃─── footer.twig
 ┃
-┃─── templates (accepted extensions: [ '.zid' ] )
-┃    ┃─── 404.zid
-┃    ┃─── home.zid
-┃    ┃─── search.zid
-┃    ┃─── products.zid
-┃    ┃─── product.zid
-┃    ┃─── categories.zid
-┃    ┃─── category.zid
-┃    ┃─── blogs.zid
-┃    ┃─── blog.zid
-┃    ┃─── faqs.zid
-┃    ┃─── cart.zid
-┃    ┃─── shpping-and-payments.zid
-┃    ┃─── account-addresses.zid
-┃    ┃─── account-orders.zid
-┃    ┃─── account-profile.zid
+┃─── templates (accepted extensions: [ '.twig' ] )
+┃    ┃─── 404.twig
+┃    ┃─── home.twig
+┃    ┃─── search.twig
+┃    ┃─── products.twig
+┃    ┃─── product.twig
+┃    ┃─── categories.twig
+┃    ┃─── category.twig
+┃    ┃─── blogs.twig
+┃    ┃─── blog.twig
+┃    ┃─── faqs.twig
+┃    ┃─── cart.twig
+┃    ┃─── shpping-and-payments.twig
+┃    ┃─── account-addresses.twig
+┃    ┃─── account-orders.twig
+┃    ┃─── account-profile.twig
 ┃
-┃─── modules (accepted extensions: ['.zid', '.html'] )
+┃─── modules (accepted extensions: ['.twig'] )
 ┃
-┃─── common (accepted extensions: ['.zid', '.html'] )
+┃─── common (accepted extensions: ['.twig'] )
 ┃
 ┃─── locals (accepted extensions: ['.json'] )
 ┃
