@@ -63,7 +63,7 @@ $ yarn add global zid-theme
 
 # 💻 Usage
 
-The follwoing structure is the valid theme SDK structure that has to be followed, othewise an error will be thrown. All the mentioned files and folders are required, and folders can be empty (Such as modules, locals, assets)
+The following structure is the valid theme SDK structure that has to be followed, othewise an error will be thrown. All the mentioned files and folders are required, and folders can be empty (Such as modules, locals, assets)
 
 [See here for accepted assets extension](#assets-accepted-extensions)
 
@@ -91,7 +91,7 @@ $ root
 ┃    ┃─── blog.twig
 ┃    ┃─── faqs.twig
 ┃    ┃─── cart.twig
-┃    ┃─── shpping-and-payments.twig
+┃    ┃─── shipping-and-payments.twig
 ┃    ┃─── account-addresses.twig
 ┃    ┃─── account-orders.twig
 ┃    ┃─── account-profile.twig
@@ -123,7 +123,7 @@ Running the build command only without arguments, will assume the current path i
 $ zid-theme build
 ```
 
-The follwoing command takes two arguments `--path` and `--name`
+The following command takes two arguments `--path` and `--name`
 
 ### To set the path of the theme (default .):
 
