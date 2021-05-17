@@ -7,10 +7,7 @@ const new_ = (theme_name:string): void => {
     logger.log()
 
     try {
-        new_theme(theme_name).then(() => {
-            logger.log(`${theme_name} project successfully created 🎉!\n`);
-            logger.log('Happy Coding </>!\n')
-        })
+        new_theme(theme_name)
     } catch (error) {
         logger.error(error)
     }
