@@ -150,10 +150,21 @@ const validate_build_args = (user_args: string[]) => {
 }
 
 
+const validate_new_args = (user_args: string[]) => {
+
+    if (!user_args[1]) {
+        logger.error('project name required')
+    }
+
+    return { theme_name: user_args[1] }
+}
+
+
 export default {
     validate_theme, 
     validate_extension,
     validate_structure,
     validate_build_args,
+    validate_new_args,
     formatSizeUnits,
 }

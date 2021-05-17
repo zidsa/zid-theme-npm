@@ -1,6 +1,6 @@
 {
     "name": "zid-theme",
-    "version": "1.0.9",
+    "version": "1.1.0",
     "description": "A CLI to process zid theme folder",
     "main": "bin/zid-theme",
     "repository": "https://github.com/zidsa/zid-theme-npm",
@@ -8,7 +8,7 @@
         "zid-theme": "bin/zid-theme"
     },
     "files": [
-        "bin/",
+        "bin/zid-theme",
         "dist/"
     ],
     "publishConfig": {
@@ -26,11 +26,14 @@
         "zid-theme"
     ],
     "dependencies": {
+        "adm-zip": "^0.5.5",
         "archiver": "^5.2.0"
     },
     "devDependencies": {
+        "@types/adm-zip": "^0.4.34",
         "@types/archiver": "^5.1.0",
         "@types/node": "^14.14.31",
+        "original-fs": "^1.1.0",
         "ts-loader": "^8.0.17",
         "typescript": "^4.2.2",
         "webpack": "^5.24.2",

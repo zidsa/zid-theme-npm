@@ -23,7 +23,7 @@ const cli = (args:string[]): void => {
         process.exit(0)
     }
 
-    if (!commands[user_args[0] as keyof typeof commands]) {
+    if (!commands.CLI_Commands.has(user_args[0])) {
         logger.log()
         logger.log(`Invalid argument ${user_args[0]}\n`, "red")
         logger.log("available commands:\n",)
@@ -34,6 +34,10 @@ const cli = (args:string[]): void => {
     if (user_args[0] == 'build') {
         const build_args = validation.validate_build_args(user_args)
         commands.build(build_args.build_name, build_args.build_path)
+    }
+    else if (user_args[0] == 'new') {
+        const new_args = validation.validate_new_args(user_args)
+        commands.new_(new_args.theme_name)
     }
     else if (user_args[0] == 'help') {
         commands.help()
