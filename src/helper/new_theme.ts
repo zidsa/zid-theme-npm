@@ -17,12 +17,11 @@ const create_new_theme = (theme_name: string, theme_path:string): void => {
 }
 
 
-const new_theme = async (theme_name:string): Promise<any> => {
+const new_theme = (theme_name:string): void => {
 
     const theme_path = path.resolve('.', theme_name)
 
     if (fs.existsSync(theme_path)) {
-
 
         logger.log(`project ${theme_name} already exist`, 'yellow')
 
