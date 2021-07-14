@@ -38,7 +38,7 @@ const zip_theme = async (build_name:string, build_path:string): Promise<any> => 
 
     archive.pipe(output);
 
-    sdk.root_required_files.forEach(file => {
+    sdk.root_allowed_files.forEach(file => {
 
         let file_path = path.resolve(build_path, file)
 

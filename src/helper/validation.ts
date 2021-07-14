@@ -11,7 +11,7 @@ const validate_theme = (build_path:string): Promise<string> => {
 
         let files = fs.readdirSync(build_path)
 
-        let valid_structure = validate_structure(files, sdk.structure.root);
+        let valid_structure = validate_structure('root', files, sdk.structure.root);
         if (valid_structure !== true) return reject(`Unable to find:\n   ${valid_structure}\n\n   - Make sure theme path is correct or add required files\n`)
 
         for (const file of files) {
@@ -25,7 +25,7 @@ const validate_theme = (build_path:string): Promise<string> => {
                 let subdir_files = fs.readdirSync(file_data.path)
 
                 if (sdk.need_structure_validation.includes(file)) {
-                    let valid_structure = validate_structure(subdir_files, sdk.structure[file]);
+                    let valid_structure = validate_structure(file, subdir_files, sdk.structure[file]);
                     if (valid_structure !== true) return reject(`Unable to find in templates folder:\n   ${valid_structure}\n\n   - Make sure theme path is correct or add required files\n`)            
                 }
 
@@ -64,12 +64,12 @@ const validate_extension = (file:string, base_structure_extnames:string[]): stri
 }
 
 
-const validate_structure = (files:string[], structure:string[]): string | boolean => {
+const validate_structure = (file: string, files:string[], structure:string[]): string | boolean => {
 
     let missed_files: string[] = [];
 
     for (let i = 0; i < structure.length; i++) {
-        if (!files.includes(structure[i]) && !sdk.optinal_folders_files.includes(structure[i])) {
+        if (!files.includes(structure[i]) && !sdk.optinal_files[file].includes(structure[i])) {
             missed_files.push(structure[i])
         }
     }
