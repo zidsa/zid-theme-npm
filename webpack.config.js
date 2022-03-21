@@ -6,7 +6,7 @@ module.exports = {
         'cli': ['./src/cli.ts'],
     },
     output: {
-        filename: '[name].js',
+        filename: 'zid-theme.js',
         path: path.resolve(__dirname, 'dist'),
         library: 'cli',
         libraryTarget: 'umd',

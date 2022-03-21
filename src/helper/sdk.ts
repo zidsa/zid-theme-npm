@@ -9,7 +9,7 @@ interface SDKStructure {
 }
 
 const structure: SDKStructure = {
-    root: ['query.json', 'layout.twig', 'header.twig', 'footer.twig', 'templates', 'modules', 'locals', 'common', 'assets'],
+    root: ['query.json', 'config.json', 'layout.twig', 'header.twig', 'footer.twig', 'templates', 'modules', 'locals', 'common', 'assets'],
     templates: ['404.twig', 'account-addresses.twig', 'account-orders.twig', 'account-profile.twig', 'blog.twig', 'blogs.twig', 'categories.twig', 'category.twig', 'faqs.twig', 'cart.twig', 'home.twig', 'product.twig', 'products.twig', 'search.twig', 'shipping-and-payments.twig'],
     common: ['.twig'],
     modules: ['.twig'],
@@ -20,7 +20,7 @@ const structure: SDKStructure = {
 const optinal_root_files: string[] = ['query.json', 'modules']
 
 const optinal_files: SDKStructure = {
-    root: ['query.json', 'modules'],
+    root: ['query.json', 'config.json', 'modules'],
     templates: ['search.twig', 'blogs.twig'],
     common: [],
     modules: [],
@@ -28,7 +28,7 @@ const optinal_files: SDKStructure = {
     locals: [],
 }
 
-const root_allowed_files: string[] = ['query.json', 'layout.twig', 'header.twig', 'footer.twig']
+const root_allowed_files: string[] = ['query.json', 'config.json', 'layout.twig', 'header.twig', 'footer.twig']
 
 const need_structure_validation: string[] = ['templates']
 

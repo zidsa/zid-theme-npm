@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-let cli = require('../dist/cli');
+let cli = require('../dist/zid-theme');
 cli(process.argv);
