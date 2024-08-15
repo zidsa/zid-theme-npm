@@ -7,7 +7,7 @@ import { setToken } from "../helper/auth";
 const login = async (
     port: number = 4444,
 ): Promise<void> => {
-    const authUrl = `http://localhost:8081/auth/cli`;
+    const authUrl = `https://partner.zid.sa/cli/authorized`;
     console.log("Opening your browser to login...");
     await open(authUrl);
 
