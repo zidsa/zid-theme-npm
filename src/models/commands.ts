@@ -3,6 +3,7 @@ import help from './help'
 import version from './version'
 import new_ from './new'
 import login from './login'
+import list from './list'
 
 
 interface CLICommands {
@@ -12,7 +13,7 @@ interface CLICommands {
 }
 
 
-const CLI_Commands:Set<String>= new Set(['version', 'v', '--version', '--v', 'build', 'new', 'help', 'login']);
+const CLI_Commands:Set<String>= new Set(['version', 'v', '--version', '--v', 'build', 'new', 'help', 'login', 'list']);
 
 
 const commands: Array<CLICommands> = [
@@ -41,6 +42,11 @@ const commands: Array<CLICommands> = [
         command: "login",
         examples: ["example: zid-theme login"]
     },
+    {
+        name: "list",
+        command: "list",
+        examples: ["example: zid-theme list"]
+    }
 ]
 
 
@@ -51,5 +57,6 @@ export {
     help,
     version,
     login,
+    list,
     CLI_Commands
 }

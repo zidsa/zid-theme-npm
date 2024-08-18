@@ -55,6 +55,9 @@ const cli = (args:string[]): void => {
     else if (user_args[0] == 'login') {
         commands.login()
     }
+    else if (user_args[0] == 'list') {
+        commands.list()
+    }
 }
 
 
