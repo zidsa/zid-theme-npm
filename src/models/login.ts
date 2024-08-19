@@ -37,7 +37,6 @@ const login = async (
 
         server.close();
     });
-
 }
 
 export default login

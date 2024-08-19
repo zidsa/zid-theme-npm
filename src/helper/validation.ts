@@ -159,6 +159,18 @@ const validate_new_args = (user_args: string[]) => {
     return { theme_name: user_args[1] }
 }
 
+const validate_preview_args = (user_args: string[]) => {
+    if (user_args[1] == '--store_email') {
+        if (!user_args[2]) {
+            logger.error('store_email required')
+        }
+    }
+    else {
+        logger.error(`Invalid Or Missing Argument: store_email`)
+    }
+
+    return { store_email: user_args[2] }
+}
 
 export default {
     validate_theme, 
@@ -167,4 +179,5 @@ export default {
     validate_build_args,
     validate_new_args,
     formatSizeUnits,
+    validate_preview_args,
 }
