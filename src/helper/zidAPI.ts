@@ -4,7 +4,7 @@ import path from 'path';
 import FormData from 'form-data'; // Node.js FormData
 
 class ZidAPI {
-    public static getPartnerData (): Promise<TPartner>  {
+    public static getPartnerData(): Promise<TPartner> {
         const api = new Api();
         return api
             .addRoute('/market/partner')
@@ -13,7 +13,7 @@ class ZidAPI {
             .send() as Promise<TPartner>;
     };
 
-    public static getThemes (): Promise<TThemesResponse>  {
+    public static getThemes(): Promise<TThemesResponse> {
         const api = new Api();
         return api
             .addRoute('/pd/themes')
@@ -22,7 +22,7 @@ class ZidAPI {
             .send() as Promise<TThemesResponse>;
     }
 
-    public static getDevStores (): Promise<TDevStoresResponse> {
+    public static getDevStores(): Promise<TDevStoresResponse> {
         const api = new Api();
         return api
             .addRoute('/market/dev-stores')
@@ -59,6 +59,41 @@ class ZidAPI {
             });
         });
     }
-}
 
+    public static async updateTheme(
+        theme_id: string,
+        theme_path: string,
+        change_type: string,
+        release_notes: string,
+    ): Promise<any> {
+        const api = new Api();
+        const form = new FormData();
+        const fileStream = fs.createReadStream(theme_path);
+
+        return new Promise((resolve, reject) => {
+            fileStream.on('error', (err) => {
+                console.error('File stream error:', err);
+                reject(err); // Reject promise on stream error
+            });
+
+            fileStream.on('open', () => {
+                form.append('theme_file', fileStream, path.basename(theme_path));
+                form.append('change_type', change_type);
+                form.append('release_notes', release_notes);
+
+                api.addRoute(`/partners/themes/cli_update/${theme_id}`)
+                    .addUserToken()
+                    .addFormData(form)
+                    .post()
+                    .send()
+                    .then(resolve)
+                    .catch((err) => {
+                        console.error('Error during API call:', err);
+                        reject(err); // Reject promise on API error
+                    });
+            });
+        });
+
+    }
+}
 export default ZidAPI;

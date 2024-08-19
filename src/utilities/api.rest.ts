@@ -5,7 +5,7 @@ import {getToken} from "../helper/auth";
 import FormData from 'form-data'; // Node.js FormData
 
 class Api {
-  private base_url = 'https://api.zid.sa/v1' as string;
+  private base_url = 'http://localhost:9090/v1' as string;
   private headers = {} as { [key: string]: string };
   private route = '' as string;
   private method = 'GET' as Method;
