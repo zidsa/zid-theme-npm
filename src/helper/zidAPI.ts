@@ -73,7 +73,7 @@ class ZidAPI {
 
         return new Promise((resolve, reject) => {
             fileStream.on('error', (err) => {
-                console.error('File stream error:', err);
+                logger.error('File stream error');
                 reject(err); // Reject promise on stream error
             });
 
@@ -89,7 +89,7 @@ class ZidAPI {
                     .send()
                     .then(resolve)
                     .catch((err) => {
-                        console.error('Error during API call:', err);
+                        logger.error('Error during API call');
                         reject(err); // Reject promise on API error
                     });
             });
