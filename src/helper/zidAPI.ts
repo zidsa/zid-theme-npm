@@ -1,7 +1,8 @@
 import Api from '../utilities/api.rest';
 import fs from "fs";
 import path from 'path';
-import FormData from 'form-data'; // Node.js FormData
+import FormData from 'form-data';
+import logger from "../console/logger"; // Node.js FormData
 
 class ZidAPI {
     public static getPartnerData(): Promise<TPartner> {
@@ -38,7 +39,7 @@ class ZidAPI {
 
         return new Promise((resolve, reject) => {
             fileStream.on('error', (err) => {
-                console.error('File stream error:', err);
+                logger.error('File stream error');
                 reject(err); // Reject promise on stream error
             });
 
@@ -53,7 +54,7 @@ class ZidAPI {
                     .send()
                     .then(resolve)
                     .catch((err) => {
-                        console.error('Error during API call:', err);
+                        logger.error('Error during API call');
                         reject(err); // Reject promise on API error
                     });
             });
@@ -72,7 +73,7 @@ class ZidAPI {
 
         return new Promise((resolve, reject) => {
             fileStream.on('error', (err) => {
-                console.error('File stream error:', err);
+                logger.error('File stream error');
                 reject(err); // Reject promise on stream error
             });
 
@@ -88,7 +89,7 @@ class ZidAPI {
                     .send()
                     .then(resolve)
                     .catch((err) => {
-                        console.error('Error during API call:', err);
+                        logger.error('Error during API call');
                         reject(err); // Reject promise on API error
                     });
             });

@@ -3,6 +3,7 @@ import axios, {
 } from 'axios';
 import {getToken} from "../helper/auth";
 import FormData from 'form-data'; // Node.js FormData
+import logger from "../console/logger";
 
 class Api {
   private base_url = 'https://api.zid.sa/v1' as string;
@@ -97,15 +98,13 @@ class Api {
       if (axios.isAxiosError(error)) {
         if (error.response) {
           if (error.response.status === 401) {
-            console.log('Token expired, please login again');
+              logger.error('Token expired, please login again');
             return; // Avoid rejecting the promise here
           }
           const { message } = error.response.data as { message: string };
-          console.error('API Error:', error);
           throw new Error(message);
         }
       }
-      console.error('Unexpected error during API call:', error);
       throw error; // Rethrow unexpected errors
     }
   }

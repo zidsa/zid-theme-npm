@@ -12,6 +12,8 @@ const preview = async (store_email: string): Promise<void> => {
 
     // build theme in the current dir.
     const currentDir = process.cwd();
+
+    // TODO: change to current path only instead of `/theme`
     await zip_theme(currentDir + '/theme',  currentDir + '/theme');
 
     // upload the theme to the store
@@ -29,12 +31,11 @@ const validateDevStore = async (store_email: string): Promise<boolean> => {
         let devStores = await ZidAPI.getDevStores();
         const devStore = devStores.payload.find((devStore) => devStore.email === store_email);
         if (!devStore) {
-            logger.log(`Dev store with email ${store_email} not found`);
+            logger.error(`Dev store with email ${store_email} not found`);
             return false;
         }
         return true;
     } catch (error) {
-        console.log('error', error);
         return false;
     }
 }
