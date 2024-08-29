@@ -16,7 +16,7 @@ const list = async (): Promise<void> => {
             let arrNoIndex = themes.items.reduce((acc, {id, price, publishing_date, status, update_status, ...x}) => { acc[id] = x; return acc; }, {})
             console.table(arrNoIndex);
         }).catch((error) => {
-            console.log('error', error);
+            logger.log('error', error);
         });
 }
 

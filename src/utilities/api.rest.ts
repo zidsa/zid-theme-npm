@@ -4,6 +4,7 @@ import axios, {
   Method,
 } from 'axios';
 import {getToken} from "../helper/auth";
+import logger from "../console/logger";
 
 class Api {
   private base_url = 'https://api.zid.sa/v1' as string;
@@ -92,7 +93,7 @@ class Api {
         .catch((error: AxiosError) => {
           if (error.response) {
             if (error.response.status === 401) {
-              console.log('Token expired, please login again');
+              logger.error('Token expired, please login again');
               return;
             }
             const { message } = error.response.data as {
