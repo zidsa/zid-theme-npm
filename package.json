@@ -14,6 +14,9 @@
     "bin/zid-theme",
     "dist/"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": {
     "name": "Ehab Alamawi",
     "email": "ehab.alamawi@zid.sa"
