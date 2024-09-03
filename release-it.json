@@ -1,0 +1,18 @@
+{
+  "git": {
+    "commitMessage": "chore: release v${version}"
+  },
+  "hooks": {
+    "before:init": ["git pull", "npm run build"],
+    "after:bump": "npx auto-changelog -p"
+  },
+  "github": {
+    "release": true
+  },
+  "npm": {
+    "publish": true
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
