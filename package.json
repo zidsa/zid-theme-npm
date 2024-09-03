@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "A CLI to process zid theme folder",
   "main": "bin/zid-theme",
-  "repository": "https://github.com/zidsa/zid-theme-npm",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zidsa/zid-theme-npm.git"
+  },
   "bin": {
     "themes-cli": "bin/zid-theme"
   },
