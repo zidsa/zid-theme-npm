@@ -1,52 +1,88 @@
 {
-    "name": "zid-theme",
-    "version": "1.1.6",
-    "description": "A CLI to process zid theme folder",
-    "main": "bin/zid-theme",
-    "repository": "https://github.com/zidsa/zid-theme-npm",
-    "bin": {
-        "zid-theme": "bin/zid-theme"
+  "name": "@zidsa/themes-cli",
+  "version": "0.0.0",
+  "description": "A CLI to process zid theme folder",
+  "main": "bin/zid-theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zidsa/zid-theme-npm.git"
+  },
+  "bin": {
+    "themes-cli": "bin/zid-theme"
+  },
+  "files": [
+    "bin/zid-theme",
+    "dist/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Ehab Alamawi",
+    "email": "ehab.alamawi@zid.sa"
+  },
+  "contributors": [
+    {
+      "name": "Juan Martinez",
+      "email": "juan.martinez@zid.sa"
     },
-    "files": [
-        "bin/zid-theme",
-        "dist/"
-    ],
-    "publishConfig": {
-        "access": "public"
+    {
+      "name": "Aissa BOUGUERN",
+      "email": "a.bouguern@zid.sa"
     },
-    "author": "omar <omar.csse@gmail.com>",
-    "license": "MIT",
-    "private": false,
-    "scripts": {
-        "build": "webpack",
-        "pkg": "pkg -t linux,macos,win dist/zid-theme.js --out-path bin",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "cli",
-        "zid",
-        "zid-theme"
-    ],
-    "dependencies": {
-        "adm-zip": "^0.5.14",
-        "archiver": "^7.0.1",
-        "axios": "^1.7.3",
-        "cors": "^2.8.5",
-        "express": "^4.19.2",
-        "form-data": "^4.0.0",
-        "open": "^10.1.0",
-        "path": "^0.12.7"
-    },
-    "devDependencies": {
-        "@types/adm-zip": "^0.5.5",
-        "@types/archiver": "^6.0.2",
-        "@types/cors": "^2.8.17",
-        "@types/express": "^4.17.21",
-        "@types/node": "^22.1.0",
-        "original-fs": "^1.2.0",
-        "ts-loader": "^9.5.1",
-        "typescript": "^5.5.4",
-        "webpack": "^5.93.0",
-        "webpack-cli": "^5.1.4"
+    {
+      "name": "Abdulaziz Homaily",
+      "email": "homaily@zid.sa"
     }
+  ],
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "webpack",
+    "release": "dotenv release-it --",
+    "pkg": "pkg -t linux,macos,win dist/zid-theme.js --out-path bin",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "zid",
+    "zid-theme"
+  ],
+  "dependencies": {
+    "adm-zip": "^0.5.14",
+    "archiver": "^7.0.1",
+    "axios": "^1.7.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "form-data": "^4.0.0",
+    "open": "^10.1.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.5",
+    "@types/archiver": "^6.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.1.0",
+    "dotenv-cli": "^7.4.2",
+    "original-fs": "^1.2.0",
+    "release-it": "^17.6.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.5.4",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "release-it": {
+    "hooks": {
+      "before:init": [
+        "git pull"
+      ]
+    },
+    "npm": {
+      "publish": true
+    },
+    "publishConfig": {
+      "access": "public"
+    }
+  }
 }

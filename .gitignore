@@ -108,3 +108,4 @@ typings/
 !/bin/zid-theme
 
 .idea/
+.DS_Store
