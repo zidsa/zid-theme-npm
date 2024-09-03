@@ -106,3 +106,5 @@ typings/
 
 **/bin**
 !/bin/zid-theme
+
+.idea/
