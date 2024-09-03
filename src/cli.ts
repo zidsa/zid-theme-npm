@@ -5,6 +5,7 @@ import print_available_commands from './helper/print_available_commands'
 import {homedir} from "os";
 import path from "path";
 import fs from "fs";
+import {TArguments} from "./models/update";
 
 const homeDir = homedir();
 const configDir = path.join(homeDir, '.zid-theme');
@@ -57,6 +58,18 @@ const cli = (args:string[]): void => {
     }
     else if (user_args[0] == 'list') {
         commands.list()
+    }
+    else if (user_args[0] == 'preview') {
+        const args = validation.validate_preview_args(user_args)
+        commands.preview(args.store_email)
+    }
+    else if (user_args[0] == 'update') {
+        const args = validation.validate_update_args(user_args)
+        commands.update(<TArguments>{
+            theme_id: args.theme_id,
+            change_type: args.change_type,
+            release_notes: args.release_notes
+        })
     }
 }
 

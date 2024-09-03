@@ -1,9 +1,8 @@
 import axios, {
-  AxiosError,
-  AxiosResponse,
   Method,
 } from 'axios';
 import {getToken} from "../helper/auth";
+import FormData from 'form-data'; // Node.js FormData
 import logger from "../console/logger";
 
 class Api {
@@ -30,6 +29,12 @@ class Api {
             Array.isArray(value) ? value.join(',') : value
           }`)
       );
+    return this;
+  }
+
+  public addFormData(formData: FormData) {
+    this.body = formData;
+    this.headers['Content-Type'] = 'multipart/form-data';
     return this;
   }
 
@@ -78,32 +83,30 @@ class Api {
     return this;
   }
 
-  public send(): Promise<unknown> {
+  public async send(): Promise<unknown> {
     const url = `${this.route}${this.key}${this.params}`;
-    return new Promise((resolve, reject) => {
-      axios({
+    try {
+      const response = await axios({
         url,
         method: this.method,
         headers: this.headers,
         data: this.body,
-      })
-        .then((response: AxiosResponse) => {
-          resolve(response.data);
-        })
-        .catch((error: AxiosError) => {
-          if (error.response) {
-            if (error.response.status === 401) {
+        timeout: 500000,
+      });
+      return response.data;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        if (error.response) {
+          if (error.response.status === 401) {
               logger.error('Token expired, please login again');
-              return;
-            }
-            const { message } = error.response.data as {
-              message: string;
-            };
-            return reject(message);
+            return; // Avoid rejecting the promise here
           }
-          reject();
-        });
-    });
+          const { message } = error.response.data as { message: string };
+          throw new Error(message);
+        }
+      }
+      throw error; // Rethrow unexpected errors
+    }
   }
 }
 

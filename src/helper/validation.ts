@@ -159,6 +159,58 @@ const validate_new_args = (user_args: string[]) => {
     return { theme_name: user_args[1] }
 }
 
+const validate_preview_args = (user_args: string[]) => {
+    if (user_args[1] == '--store_email') {
+        if (!user_args[2]) {
+            logger.error('store_email required')
+        }
+    }
+    else {
+        logger.error(`Invalid Or Missing Argument: store_email`)
+    }
+
+    return { store_email: user_args[2] }
+}
+
+const validate_update_args = (user_args: string[]) => {
+
+    if (user_args.length != 7) {
+        logger.error('Invalid Arguments')
+    }
+
+    if (user_args[1] == '--theme_id') {
+        if (!user_args[2]) {
+            logger.error('theme_id required')
+        }
+    }
+    else {
+        logger.error(`Invalid Or Missing Argument: theme_id`)
+    }
+
+    if (user_args[3] == '--change_type') {
+        if (!user_args[4]) {
+            logger.error('change_type required')
+        } else {
+            if (user_args[4] !== 'major' && user_args[4] !== 'minor' && user_args[4] !== 'patch') {
+                logger.error('Invalid change_type: major | minor | patch')
+            }
+        }
+    }
+    else {
+        logger.error(`Invalid Or Missing Argument: change_type`)
+    }
+
+    if (user_args[5] == '--release_notes') {
+        if (!user_args[6]) {
+            logger.error('release_notes required')
+        }
+    }
+    else {
+        logger.error(`Invalid Or Missing Argument: release_notes`)
+    }
+
+    return { theme_id: user_args[2], change_type: user_args[4], release_notes: user_args[6] }
+}
 
 export default {
     validate_theme, 
@@ -167,4 +219,6 @@ export default {
     validate_build_args,
     validate_new_args,
     formatSizeUnits,
+    validate_preview_args,
+    validate_update_args,
 }

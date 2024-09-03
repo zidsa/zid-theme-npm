@@ -17,3 +17,14 @@ type TTheme = {
     publishing_date?: string;
     price?: number;
 }
+
+type TDevStoresResponse = {
+    payload: TDevStore[];
+}
+
+type TDevStore = {
+    id: number;
+    name: string;
+    email: string;
+    link: number;
+}
