@@ -5,6 +5,7 @@ import new_ from './new'
 import login from './login'
 import list from './list'
 import preview from './preview'
+import update from './update'
 
 
 interface CLICommands {
@@ -25,6 +26,7 @@ const CLI_Commands:Set<String>= new Set([
     'login',
     'list',
     'preview',
+    'update',
 ]);
 
 const commands: Array<CLICommands> = [
@@ -63,6 +65,11 @@ const commands: Array<CLICommands> = [
         command: "preview args[ --store_email required ]",
         examples: ["example: zid-theme preview --store_email sqwiktpoo1334@zam-partner.email" ],
     },
+    {
+        name: "update",
+        command: "update args[ --theme_id required, --change_type required, --release_notes required ]",
+        examples: ["example: zid-theme update --theme_id 1234 --change_type major --release_notes 'this is a major update'"],
+    },
 ];
 
 export {
@@ -74,5 +81,6 @@ export {
     login,
     list,
     preview,
+    update,
     CLI_Commands
 }
