@@ -2,7 +2,17 @@ import * as commands from './models/commands';
 import logger from './console/logger'
 import validation from './helper/validation'
 import print_available_commands from './helper/print_available_commands'
+import {homedir} from "os";
+import path from "path";
+import fs from "fs";
 
+const homeDir = homedir();
+const configDir = path.join(homeDir, '.zid-theme');
+export const configPath = path.join(configDir, 'config.json');
+
+if (!fs.existsSync(configDir)) {
+    fs.mkdirSync(configDir, { recursive: true });
+}
 
 const cli = (args:string[]): void => {
 
@@ -42,7 +52,9 @@ const cli = (args:string[]): void => {
     else if (user_args[0] == 'help') {
         commands.help()
     }
-
+    else if (user_args[0] == 'login') {
+        commands.login()
+    }
 }
 
 

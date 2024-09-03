@@ -7,7 +7,7 @@ const log = (msg='', color='green'): void => {
 
 }
 
-const error = (msg: string): void => {
+const error = (msg: string|any): void => {
     log()
     log(`Error: ${msg}\n`, "red")
     process.exit(9)
