@@ -73,17 +73,10 @@
     "webpack-cli": "^5.1.4"
   },
   "release-it": {
-    "git": {
-      "commitMessage": "chore: release v${version}"
-    },
     "hooks": {
       "before:init": [
         "git pull"
-      ],
-      "after:bump": "npx auto-changelog -p"
-    },
-    "github": {
-      "release": true
+      ]
     },
     "npm": {
       "publish": true
