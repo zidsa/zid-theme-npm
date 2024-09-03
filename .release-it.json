@@ -3,7 +3,7 @@
     "commitMessage": "chore: release v${version}"
   },
   "hooks": {
-    "before:init": ["git pull", "npm run build"],
+    "before:init": ["git pull"],
     "after:bump": "npx auto-changelog -p"
   },
   "github": {
