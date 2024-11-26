@@ -3,7 +3,7 @@ import zip_theme from "../helper/zip_theme";
 import logger from "../console/logger";
 
 const preview = async (store_email: string): Promise<void> => {
-    logger.log('preview command called with store_email:', store_email);
+    logger.log(`preview command called with store_email: ${store_email}`);
 
     const isValidStore = await validateDevStore(store_email);
     if (!isValidStore) {
