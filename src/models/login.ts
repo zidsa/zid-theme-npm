@@ -1,5 +1,5 @@
-import open from "open";
 import express from "express";
+import open from "open";
 import cors from "cors";
 import { setToken } from "../helper/auth";
 import logger from "../console/logger";
