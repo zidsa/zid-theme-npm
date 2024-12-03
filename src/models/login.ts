@@ -19,7 +19,6 @@ const login = async (
         logger.log(`Listening for authentication callback on http://localhost:${port}/auth/callback`);
     });
 
-    let result: boolean = false;
     app.get('/auth/callback', (req, res) => {
         const authToken = req.query.token;
         if (authToken && typeof authToken === 'string') {
@@ -28,20 +27,15 @@ const login = async (
                 server.close();
                 return;
             }
-            result = true;
             res.send('Authentication successful! You can close this window.');
+            logger.log('Authentication successful!');
         } else {
-            res.send('Authentication failed.');
+            let msg = 'Authentication failed.';
+            res.send(msg);
+            logger.log(msg, 'red');
         }
-
         server.close();
     });
-
-    if (result) {
-        logger.log('Successfully authenticated! You can now use zid-theme commands.');
-    } else {
-        logger.error('Authentication failed.');
-    }
 }
 
 export default login
