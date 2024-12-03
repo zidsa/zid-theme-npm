@@ -33,6 +33,10 @@
     {
       "name": "Abdulaziz Homaily",
       "email": "homaily@zid.sa"
+    },
+    {
+      "name": "zid_engineers",
+      "email": "developers@zid.sa"
     }
   ],
   "license": "MIT",
