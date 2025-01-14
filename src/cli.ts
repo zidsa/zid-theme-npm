@@ -46,6 +46,10 @@ const cli = (args:string[]): void => {
         const build_args = validation.validate_build_args(user_args)
         commands.build(build_args.build_name, build_args.build_path)
     }
+    else if (user_args[0] == 'build-landing-page') {
+        const build_args = validation.validate_build_args(user_args)
+        commands.build_landing_page(build_args.build_name, build_args.build_path)
+    }
     else if (user_args[0] == 'new') {
         const new_args = validation.validate_new_args(user_args)
         commands.new_(new_args.theme_name)
