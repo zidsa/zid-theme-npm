@@ -14,7 +14,7 @@ const zip_landing_page = async (build_name:string, build_path:string): Promise<a
     let zipfile_path:string =  path.resolve(build_path, `${build_name}.zip`)
 
     try {
-        let valid_theme = await validation.validate_theme(build_path)   
+        let valid_theme = await validation.validate_landing_page(build_path)   
         logger.log()
         logger.log(valid_theme)
     } catch (error) {

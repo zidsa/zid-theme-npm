@@ -9,7 +9,7 @@ interface SDKStructure {
 }
 
 const structure: SDKStructure = {
-    root: ['templates', 'modules', 'locals', 'common', 'assets'],
+    root: ['templates', 'modules', 'locals', 'assets'],
     templates: ['landing_page.twig'],
     common: ['.twig'],
     modules: ['.twig'],

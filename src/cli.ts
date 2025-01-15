@@ -43,10 +43,12 @@ const cli = (args:string[]): void => {
     }
 
     if (user_args[0] == 'build') {
+        console.log('build only');
         const build_args = validation.validate_build_args(user_args)
         commands.build(build_args.build_name, build_args.build_path)
     }
     else if (user_args[0] == 'build-landing-page') {
+        console.log('build-landing-page');
         const build_args = validation.validate_build_args(user_args)
         commands.build_landing_page(build_args.build_name, build_args.build_path)
     }

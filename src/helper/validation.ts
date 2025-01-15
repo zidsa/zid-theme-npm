@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import sdk from './sdk'
+import sdk_landing_page from './sdk-landing-page'
 import delete_ds_store from './delete_ds_store'
 import logger from '../console/logger'
 
@@ -42,6 +43,55 @@ const validate_theme = (build_path:string): Promise<string> => {
 
                     if (!sdk.need_structure_validation.includes(file)) {
                         let valid_ext = validate_extension(subdir_file, sdk.structure[file]);
+                        if (valid_ext !== true) return reject(`Invalid extension ${valid_ext}\n   ${subdir_file} in ${file} folder\n`)
+                    }
+                }
+
+            }
+        }
+
+        return resolve(`Theme validated`)
+    })
+
+}
+
+const validate_landing_page = (build_path:string): Promise<string> => {
+
+    return new Promise((resolve, reject) => {
+
+        let files = fs.readdirSync(build_path)
+
+        let valid_structure = validate_structure('root', files, sdk_landing_page.structure.root);
+        if (valid_structure !== true) return reject(`Unable to find:\n   ${valid_structure}\n\n   - Make sure theme path is correct or add required files\n`)
+
+        for (const file of files) {
+
+            let file_data = {filename: file, path: path.resolve(build_path, file)}
+            let stats = null
+            file == '.DS_Store' ? delete_ds_store(file_data.path) : stats = fs.lstatSync(file_data.path)
+
+            if (stats && stats.isDirectory() && sdk_landing_page.structure.root.includes(file)) {
+
+                let subdir_files = fs.readdirSync(file_data.path)
+
+                if (sdk_landing_page.need_structure_validation.includes(file)) {
+                    let valid_structure = validate_structure(file, subdir_files, sdk_landing_page.structure[file]);
+                    if (valid_structure !== true) return reject(`Unable to find in templates folder:\n   ${valid_structure}\n\n   - Make sure theme path is correct or add required files\n`)            
+                }
+
+                for (const subdir_file of subdir_files) {
+
+                    let subdir_file_path = path.resolve(file_data.path, subdir_file)
+
+                    if (subdir_file == '.DS_Store') {
+                        delete_ds_store(subdir_file_path)
+                        continue;
+                    }
+
+                    if (file == 'assets') validate_assets_file_size(subdir_file, subdir_file_path)
+
+                    if (!sdk_landing_page.need_structure_validation.includes(file)) {
+                        let valid_ext = validate_extension(subdir_file, sdk_landing_page.structure[file]);
                         if (valid_ext !== true) return reject(`Invalid extension ${valid_ext}\n   ${subdir_file} in ${file} folder\n`)
                     }
                 }
@@ -214,6 +264,7 @@ const validate_update_args = (user_args: string[]) => {
 
 export default {
     validate_theme, 
+    validate_landing_page,
     validate_extension,
     validate_structure,
     validate_build_args,
