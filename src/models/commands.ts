@@ -1,4 +1,5 @@
 import build from './build'
+import build_landing_page from './build-landing-page'
 import help from './help'
 import version from './version'
 import new_ from './new'
@@ -21,6 +22,7 @@ const CLI_Commands:Set<String>= new Set([
     '--version',
     '--v',
     'build',
+    'build-landing-page',
     'new',
     'help',
     'login',
@@ -33,6 +35,11 @@ const commands: Array<CLICommands> = [
     {
         name: "build",
         command: "build args[ --name optional => default:cwd name, --path optional => default:cwd ]",
+        examples: ["example-1: zid-theme build --name omar --path ./folder", "example-2: zid-theme build"]
+    },
+    {
+        name: "build-landing-page",
+        command: "build-landing-page args[ --name optional => default:cwd name, --path optional => default:cwd ]",
         examples: ["example-1: zid-theme build --name omar --path ./folder", "example-2: zid-theme build"]
     },
     {
@@ -75,6 +82,7 @@ const commands: Array<CLICommands> = [
 export {
     commands,
     build,
+    build_landing_page,
     new_,
     help,
     version,
