@@ -219,6 +219,10 @@ const validate_preview_args = (user_args: string[]) => {
         logger.error(`Invalid Or Missing Argument: store_email`)
     }
 
+    if (user_args[3] && user_args[3] === '--theme_name' && user_args[4]) {
+        return { store_email: user_args[2], code: user_args[4] }
+    }
+
     return { store_email: user_args[2] }
 }
 
