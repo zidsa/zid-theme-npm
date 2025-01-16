@@ -1,9 +1,8 @@
 const path = require('path');
 
-
 module.exports = {
     entry: {
-        'cli': ['./src/cli.ts'],
+        'cli': [path.resolve(__dirname, './src/cli.ts')],
     },
     output: {
         filename: 'zid-theme.js',
@@ -13,6 +12,7 @@ module.exports = {
         libraryExport: 'default',
     },
     resolve: {
+        modules: [path.resolve(__dirname, 'src'), 'node_modules'],
         extensions: ['.ts', '.js']
     },
     module: {
@@ -32,4 +32,5 @@ module.exports = {
         minimize: true
     },
     externals: ['archiver'],
+    cache: false
 };
