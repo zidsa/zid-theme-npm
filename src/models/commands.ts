@@ -69,8 +69,8 @@ const commands: Array<CLICommands> = [
     },
     {
         name: "preview",
-        command: "preview args[ --store_email required ]",
-        examples: ["example: zid-theme preview --store_email sqwiktpoo1334@zam-partner.email" ],
+        command: "preview args[ --store_email required --theme_name optional]",
+        examples: ["example: zid-theme preview --store_email sqwiktpoo1334@zam-partner.email --theme_name 'my awesome theme'" ],
     },
     {
         name: "update",
