@@ -9,7 +9,7 @@ The `preview` command allows you to visualize your current theme in development 
 ## Usage
 
 ```bash
-$ zid-theme preview --store_email <email> --code '<theme name>'
+$ zid-theme preview --store_email <email> --theme_name '<theme name>'
 ```
 
 ## Required Option
