@@ -18,7 +18,7 @@ $ zid-theme preview --store_email <email> --theme_name '<theme name>'
 
 ## Optional Option
 
-- `--theme_name '<theme name>'`: Using this option will update the theme instead of creating a new one. The code is the theme name created by the client (see [new theme](NEW.md) command), you can find it on Partner Dashboard. 
+- `--theme_name '<theme name>'`: Using this option will update the theme instead of creating a new one. The theme_name is the name given to the theme when it's created by the client (see [new theme](NEW.md) command), you can find it on Partner Dashboard. 
 
 ## Authentication
 
