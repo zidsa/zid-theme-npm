@@ -65,7 +65,7 @@ const cli = (args:string[]): void => {
     }
     else if (user_args[0] == 'preview') {
         const args = validation.validate_preview_args(user_args)
-        commands.preview(args.store_email)
+        commands.preview(args.store_email, args.code)
     }
     else if (user_args[0] == 'update') {
         const args = validation.validate_update_args(user_args)

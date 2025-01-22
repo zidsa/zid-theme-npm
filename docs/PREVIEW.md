@@ -9,12 +9,16 @@ The `preview` command allows you to visualize your current theme in development 
 ## Usage
 
 ```bash
-$ zid-theme preview --store_email <email>
+$ zid-theme preview --store_email <email> --theme_name '<theme name>'
 ```
 
-## Required Options
+## Required Option
 
 - `--store_email <email>`: The email address associated with the development store you want to use for preview.
+
+## Optional Option
+
+- `--theme_name '<theme name>'`: Using this option will update the theme instead of creating a new one. The theme_name is the name given to the theme when it's created by the client (see [new theme](NEW.md) command), you can find it on Partner Dashboard. 
 
 ## Authentication
 
@@ -27,7 +31,7 @@ You can find a list of your development stores in the [Zid Partner Dashboard](ht
 ## Example
 
 ```bash
-$ zid-theme preview --store_email partner123@zid.dev
+$ zid-theme preview --store_email partner123@zid.dev --theme_name 'my awesome theme'
 ```
 
 ## Process

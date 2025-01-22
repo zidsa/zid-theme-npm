@@ -32,7 +32,7 @@ class ZidAPI {
             .send() as Promise<TDevStoresResponse>;
     }
 
-    public static async uploadTheme(store_email: string, themePath: string): Promise<any> {
+    public static async uploadTheme(store_email: string, themePath: string, code?: string): Promise<any> {
         const api = new Api();
         const form = new FormData();
         const fileStream = fs.createReadStream(themePath);
@@ -46,6 +46,9 @@ class ZidAPI {
             fileStream.on('open', () => {
                 form.append('theme_file', fileStream, path.basename(themePath));
                 form.append('store_email', store_email);
+                if (code) {
+                    form.append('code', code);
+                }
 
                 api.addRoute('/partners/themes/preview')
                     .addUserToken()

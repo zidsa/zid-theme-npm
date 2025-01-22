@@ -2,8 +2,11 @@ import ZidAPI from "../helper/zidAPI";
 import zip_theme from "../helper/zip_theme";
 import logger from "../console/logger";
 
-const preview = async (store_email: string): Promise<void> => {
+const preview = async (store_email: string, code?: string): Promise<void> => {
     logger.log(`preview command called with store_email: ${store_email}`);
+    if (code) {
+        logger.log(`theme code: ${code}`);
+    }
 
     const isValidStore = await validateDevStore(store_email);
     if (!isValidStore) {
@@ -19,7 +22,7 @@ const preview = async (store_email: string): Promise<void> => {
     // upload the theme to the store
     const themePath = currentDir + '/theme.zip';
 
-    const ss = await ZidAPI.uploadTheme(store_email, themePath);
+    const ss = await ZidAPI.uploadTheme(store_email, themePath, code);
 
     logger.log(ss['message']['description']);
 }
