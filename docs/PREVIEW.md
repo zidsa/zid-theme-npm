@@ -9,7 +9,7 @@ The `preview` command allows you to visualize your current theme in development 
 ## Usage
 
 ```bash
-$ zid-theme preview --store_email <email> --theme_name '<theme name>'
+$ themes-cli preview --store_email <email> --theme_name '<theme name>'
 ```
 
 ## Required Option
@@ -31,7 +31,7 @@ You can find a list of your development stores in the [Zid Partner Dashboard](ht
 ## Example
 
 ```bash
-$ zid-theme preview --store_email partner123@zid.dev --theme_name 'my awesome theme'
+$ themes-cli preview --store_email partner123@zid.dev --theme_name 'my awesome theme'
 ```
 
 ## Process
