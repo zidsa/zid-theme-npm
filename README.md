@@ -36,14 +36,14 @@ yarn global add @zidsa/themes-cli
 ## 💻 Available Commands
 
 | Command   | Description                                | Usage                          | Documentation                            |
-| --------- | ------------------------------------------ | ------------------------------ | ---------------------------------------- |
+| --------- | ------------------------------------------ | ------------------------------ |------------------------------------------|
 | `build`   | Build your theme for deployment            | `themes-cli build [options]`   | [Build Documentation](docs/BUILD.md)     |
 | `new`     | Create a new theme project                 | `themes-cli new [options]`     | [New Theme Documentation](docs/NEW.md)   |
 | `help`    | Display help information for commands      | `themes-cli help`              | -                                        |
 | `login`   | Authenticate with your Zid partner account | `themes-cli login`             | [Login Documentation](docs/AUTH.md)      |
 | `list`    | List available themes in your account      | `themes-cli list`              | [List Documentation](docs/LISTING.md)    |
 | `preview` | Preview your theme in a demo store         | `themes-cli preview [options]` | [Preview Documentation](docs/PREVIEW.md) |
-| `update`  | Submit an update for your theme            | `themes-cli update [options]`  | [Update Documentation](UPDATE/update.md) |
+| `update`  | Submit an update for your theme            | `themes-cli update [options]`  | [Update Documentation](docs/UPDATE.md)   |
 
 For detailed information on each command, click the documentation links above or run:
 
