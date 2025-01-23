@@ -1,4 +1,4 @@
-# zid-theme list
+# themes-cli list
 
 List all themes associated with your Zid partner account.
 
@@ -9,7 +9,7 @@ The `list` command retrieves and displays a table of all themes you have in your
 ## Usage
 
 ```bash
-$ zid-theme list [options]
+$ themes-cli list [options]
 ```
 
 ## Options
@@ -18,7 +18,7 @@ Currently, this command doesn't have any additional options.
 
 ## Authentication
 
-This command requires authentication. If you're not signed in, you'll be prompted to log in first. Use the `zid-theme login` command if you need to authenticate.
+This command requires authentication. If you're not signed in, you'll be prompted to log in first. Use the `themes-cli login` command if you need to authenticate.
 
 ## Output
 

@@ -1,11 +1,11 @@
-# zid-theme new
+# themes-cli new
 
 Create a new Zid theme using our starter template.
 
 ## Usage
 
 ```bash
-zid-theme new <theme-name>
+themes-cli new <theme-name>
 ```
 
 ## Arguments
@@ -67,7 +67,7 @@ $ root
 
 Create a new theme with default options:
 ```bash
-zid-theme new my-awesome-theme
+themes-cli new my-awesome-theme
 ```
 
 ## Post-Creation Steps
@@ -80,7 +80,7 @@ After creating your new theme:
    ```
 2. Start customizing your theme by editing the Twig templates and adding your styles and scripts in the `assets/` directory.
 
-3. Use other `zid-theme` commands like `build` and `preview` to test and develop your theme.
+3. Use other `themes-cli` commands like `build` and `preview` to test and develop your theme.
 
 ## Notes
 

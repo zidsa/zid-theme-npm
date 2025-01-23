@@ -1,16 +1,16 @@
-# zid-theme login
+# themes-cli login
 
 Authenticate your CLI tool with your Zid partner account.
 
 ## Usage
 
 ```bash
-$ zid-theme login
+$ themes-cli login
 ```
 
 ## Description
 
-The `login` command initiates the authentication process, allowing you to connect your CLI tool with your Zid partner account. This authentication is required to use most of the zid-theme commands.
+The `login` command initiates the authentication process, allowing you to connect your CLI tool with your Zid partner account. This authentication is required to use most of the themes-cli commands.
 
 ## Authentication Process
 
@@ -38,13 +38,13 @@ If you encounter any issues during the login process:
 ## Example
 
 ```bash
-$ zid-theme login
+$ themes-cli login
 Starting authentication process...
 Opening Zid Partner Dashboard in your default browser...
 Waiting for authentication...
-Successfully authenticated! You can now use zid-theme commands.
+Successfully authenticated! You can now use themes-cli commands.
 ```
 
 ## Security
 
-Your authentication tokens are stored securely on your local machine. Always ensure you're using the official zid-theme CLI tool and keep your system secure to protect your account information.
+Your authentication tokens are stored securely on your local machine. Always ensure you're using the official themes-cli CLI tool and keep your system secure to protect your account information.

@@ -1,4 +1,4 @@
-# zid-theme preview
+# themes-cli preview
 
 Preview your theme in development using a Zid demo store.
 
@@ -52,7 +52,7 @@ $ themes-cli preview --store_email partner123@zid.dev --theme_name 'my awesome t
 If you encounter issues:
 
 1. Verify that you're using the correct email for an existing development store.
-2. Ensure you're authenticated by running `zid-theme login` first.
+2. Ensure you're authenticated by running `themes-cli login` first.
 3. Check that your theme follows the required structure and passes validation.
 
 For more information on theme development and testing, refer to the Zid Theme Development Documentation.

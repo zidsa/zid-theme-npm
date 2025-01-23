@@ -1,4 +1,4 @@
-# zid-theme build
+# themes-cli build
 
 Build your Zid theme for deployment.
 
