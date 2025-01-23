@@ -9,7 +9,7 @@ The `build` command compiles and packages your Zid theme into a deployable zip f
 ## Usage
 
 ```bash
-$ zid-theme build [options]
+$ themes-cli build [options]
 ```
 
 ## Options
@@ -74,22 +74,22 @@ $ root
 
 Build the theme in the current directory:
 ```bash
-$ zid-theme build
+$ themes-cli build
 ```
 
 Build the theme from a specific path:
 ```bash
-$ zid-theme build --path ./my-theme-folder
+$ themes-cli build --path ./my-theme-folder
 ```
 
 Build the theme with a custom output name:
 ```bash
-$ zid-theme build --name best-theme-ever
+$ themes-cli build --name best-theme-ever
 ```
 
 Full command with custom path and name:
 ```bash
-$ zid-theme build --name best-theme-ever --path ./my-theme-folder
+$ themes-cli build --name best-theme-ever --path ./my-theme-folder
 ```
 
 ## Notes
